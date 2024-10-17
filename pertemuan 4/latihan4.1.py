@@ -2,7 +2,7 @@
 # ================== Cara 1 ================================
 from PyQt5 import QtGui, QtCore, QtWidgets
 
-app = QtWidgeds.QApplication([])
+app = QtWidgets.QApplication([])
 window = QtWidgets.QPushButton("MyButton")
 window.show()
 app.exec_()
@@ -12,7 +12,7 @@ from PyQt5.Qtwidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-app = Qapplication([])
+app = QApplication([])
 window = QtWidgets.QPushButton("MyButton")
 window.show()
 app.exec_()
