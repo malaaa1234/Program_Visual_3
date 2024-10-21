@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>557</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,9 +110,12 @@
      <rect>
       <x>140</x>
       <y>30</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>2210010392</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
@@ -120,9 +123,12 @@
      <rect>
       <x>140</x>
       <y>80</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Nurmala Sari</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_3">
@@ -130,9 +136,12 @@
      <rect>
       <x>140</x>
       <y>130</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>5M Reg Pagi Bjm</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_4">
@@ -140,9 +149,12 @@
      <rect>
       <x>140</x>
       <y>180</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Barabai</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_5">
@@ -150,9 +162,12 @@
      <rect>
       <x>140</x>
       <y>230</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>01 Desember 2002</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_6">
@@ -160,9 +175,12 @@
      <rect>
       <x>140</x>
       <y>280</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>085467382919</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_7">
@@ -170,9 +188,12 @@
      <rect>
       <x>140</x>
       <y>330</y>
-      <width>201</width>
+      <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Barabai</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -180,8 +201,8 @@
      <rect>
       <x>50</x>
       <y>390</y>
-      <width>75</width>
-      <height>23</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -194,10 +215,10 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>160</x>
       <y>390</y>
-      <width>75</width>
-      <height>23</height>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -210,10 +231,10 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>260</x>
       <y>390</y>
-      <width>75</width>
-      <height>23</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -226,10 +247,10 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>364</x>
       <y>390</y>
-      <width>75</width>
-      <height>23</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">

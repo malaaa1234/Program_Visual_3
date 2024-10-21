@@ -1,5 +1,5 @@
 # ================== Window Management ================================
-from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication, QPushButton, QLabel
+from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication, QPushButton, QLabel, QDesktopWidget
 
 class MyWindow(QMainWindow):
     def _init_(self):
