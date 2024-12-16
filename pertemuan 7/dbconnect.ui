@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>532</width>
-    <height>300</height>
+    <width>400</width>
+    <height>324</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>20</x>
      <y>30</y>
-     <width>301</width>
-     <height>80</height>
+     <width>361</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -38,22 +38,22 @@
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>130</y>
-     <width>311</width>
-     <height>80</height>
+     <x>20</x>
+     <y>230</y>
+     <width>361</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pushButtonCreateDb">
       <property name="text">
        <string>DATABASE CREATION</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButtonDbcon">
       <property name="text">
        <string>DATABASE CONNECTION</string>
       </property>
@@ -61,14 +61,19 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="labelResult">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>220</y>
-     <width>35</width>
-     <height>10</height>
+     <x>20</x>
+     <y>280</y>
+     <width>71</width>
+     <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>TextLabel</string>

@@ -9,15 +9,14 @@
 
 import mysql.connector as mc
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QTableWidgetItem
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(500, 400)
-        self.verticalLayoutWidget = QtWidgets.QWidget(Form)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(30, 30, 111, 80))
+class Ui_Kategori(object):
+    def setupUi(self, Kategori):
+        Kategori.setObjectName("Kategori")
+        Kategori.resize(469, 314)
+        self.verticalLayoutWidget = QtWidgets.QWidget(Kategori)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 20, 221, 80))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -28,8 +27,8 @@ class Ui_Form(object):
         self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(Form)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(150, 30, 221, 80))
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(Kategori)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(240, 20, 221, 80))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -40,28 +39,26 @@ class Ui_Form(object):
         self.lineEdit_nama = QtWidgets.QLineEdit(self.verticalLayoutWidget_2)
         self.lineEdit_nama.setObjectName("lineEdit_nama")
         self.verticalLayout_2.addWidget(self.lineEdit_nama)
-        self.horizontalLayoutWidget = QtWidgets.QWidget(Form)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(30, 120, 341, 41))
+        self.horizontalLayoutWidget = QtWidgets.QWidget(Kategori)
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 160, 431, 31))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.btnInsert = QtWidgets.QPushButton(self.horizontalLayoutWidget)
 
         self.btnInsert.clicked.connect(self.insertKategori)
         self.btnInsert.setObjectName("btnInsert")
-        self.horizontalLayout.addWidget(self.btnInsert)
-        self.labelInfo = QtWidgets.QLabel(Form)
-        self.labelInfo.setGeometry(QtCore.QRect(30, 200, 481, 46))
+        self.horizontalLayout_2.addWidget(self.btnInsert)
+        self.labelResult = QtWidgets.QLabel(Kategori)
+        self.labelResult.setGeometry(QtCore.QRect(20, 210, 141, 16))
         font = QtGui.QFont()
-        font.setPointSize(9)
-        font.setBold(True)
-        font.setWeight(75)
-        self.labelInfo.setFont(font)
-        self.labelInfo.setObjectName("labelInfo")
+        font.setPointSize(14)
+        self.labelResult.setFont(font)
+        self.labelResult.setObjectName("labelResult")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Kategori)
+        QtCore.QMetaObject.connectSlotsByName(Kategori)
 
     def insertKategori(self):
         try:
@@ -79,27 +76,26 @@ class Ui_Form(object):
             val = (idkat, namekat)
             cursor.execute(sql, val)
             mydb.commit()
-            self.labelInfo.setText("Data Kategori Berhasil Dimasukkan!")
+            self.labelResult.setText("Data Kategori Berhasil Dimasukkan!")
             self.lineEdit_id.setText("")
             self.lineEdit_nama.setText("")
         except mc.Error as e:
             error_message = f"Error: {e}"
-            self.labelInfo.setText(error_message)
+            self.labelResult.setText(error_message)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, Kategori):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "ID Kategori"))
-        self.label_2.setText(_translate("Form", "Nama Kategori"))
-        self.btnInsert.setText(_translate("Form", "MASUKKAN DATA"))
-        self.labelInfo.setText(_translate("Form", "TextLabel"))
-
+        Kategori.setWindowTitle(_translate("Kategori", "Form"))
+        self.label.setText(_translate("Kategori", "ID Kategori"))
+        self.label_2.setText(_translate("Kategori", "Nama Kategori"))
+        self.btnInsert.setText(_translate("Kategori", "INSERT DATA"))
+        self.labelResult.setText(_translate("Kategori", "TextLabel"))
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Kategori = QtWidgets.QWidget()
-    ui = Ui_Form()
+    ui = Ui_Kategori()
     ui.setupUi(Kategori)
     Kategori.show()
     sys.exit(app.exec_())

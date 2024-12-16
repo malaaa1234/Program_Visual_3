@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(532, 400)
+        Form.resize(400, 324)
         self.horizontalLayoutWidget = QtWidgets.QWidget(Form)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(60, 30, 301, 80))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 30, 361, 31))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -28,62 +28,64 @@ class Ui_Form(object):
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(Form)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(50, 200, 390, 80))
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 230, 361, 31))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton_2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButtonCreateDb = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        self.pushButtonCreateDb.setObjectName("pushButtonCreateDb")
 
-        self.pushButton_2.clicked.connect(self.create_database)
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
-        self.pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.pushButton.setObjectName("pushButton")
+        self.pushButtonCreateDb.clicked.connect(self.create_database)
+        self.horizontalLayout_2.addWidget(self.pushButtonCreateDb)
+        self.pushButtonDbcon = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        self.pushButtonDbcon.setObjectName("pushButtonDbcon")
 
-        self.pushButton.clicked.connect(self.db_connect)
-        self.horizontalLayout_2.addWidget(self.pushButton)
-        self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(50, 290, 300, 50))
-        self.label_2.setObjectName("label_2")
+        self.pushButtonDbcon.clicked.connect(self.db_connect)
+        self.horizontalLayout_2.addWidget(self.pushButtonDbcon)
+        self.labelResult = QtWidgets.QLabel(Form)
+        self.labelResult.setGeometry(QtCore.QRect(20, 280, 71, 16))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.labelResult.setFont(font)
+        self.labelResult.setObjectName("labelResult")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
-    
+
     def create_database(self):
         try:
             mydb = mc.connect(
-                host = "localhost",
-                user = "root",
-                password = ""
+                host = 'localhost',
+                user = 'root',
+                password = ''
             )
             cursor = mydb.cursor()
             dbname = self.lineEdit.text()
             cursor.execute('CREATE DATABASE {}'.format(dbname))
-            self.label_2.setText("Database {} Created ".format(dbname))
+            self.labelResult.setText("Database {} Created ".format(dbname))
         except mc.Error as e:
-            self.label_2.setText("Database creation failed!")
+            print('Error creating database: ', e)
+            self.labelResult.setText("Database creation failed!")
 
     def db_connect(self):
         try:
             mydb = mc.connect(
-                host = "localhost",
-                user = "root",
-                password = "",
-                database = "db_penjualan"
+                host = 'localhost',
+                user = 'root',
+                password = ''
             )
-            self.label_2.setText("There is Connected")
+            self.labelResult.setText("Connected")
         except mc.Error as err:
-            self.label_2.setText("Error in connection")
+            self.labelResult.setText(f"Connection failed:", err)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "CREATE DATABASE"))
-        self.pushButton_2.setText(_translate("Form", "DATABASE CREATION"))
-        self.pushButton.setText(_translate("Form", "DATABASE CONNECTION"))
-        self.label_2.setText(_translate("Form", "TextLabel"))
-
+        self.pushButtonCreateDb.setText(_translate("Form", "DATABASE CREATION"))
+        self.pushButtonDbcon.setText(_translate("Form", "DATABASE CONNECTION"))
+        self.labelResult.setText(_translate("Form", "TextLabel"))
 
 if __name__ == "__main__":
     import sys
